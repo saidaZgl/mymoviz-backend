@@ -38,8 +38,13 @@ router.post("/mymovies", function(req, res, next) {
   });
 });
 
-router.delete("/mymovies", function(req, res, next) {
-  res.json({ result: true });
+router.delete("/mymovies/:movieId", function(req, res, next) {
+  movieModel.deleteOne({ idMovieDB: req.body.params.movieId }, function(
+    error,
+    response
+  ) {
+    res.json({ result: true });
+  });
 });
 
 module.exports = router;
