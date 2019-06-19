@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
+const movieModel = require("../models/movies");
+
 const request = require("request");
 
 const apiKey = "79191836ddaa0da3df76a5ffef6f07ad6ab0c641";
